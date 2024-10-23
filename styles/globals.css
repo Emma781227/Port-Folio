@@ -48,4 +48,11 @@
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
+  
+}
+@media only screen and (max-height: 890px) { 
+   .scrollbar {
+    height: 29rem;
+    overflow: scroll
+ } 
 }
