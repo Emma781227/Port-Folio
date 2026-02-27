@@ -103,13 +103,14 @@ const aboutData = [
 
 import Avatar from '../../components/Avatar';
 import Circles from '../../components/Circles';
+import Layout from '../../components/Layout';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
 import CountUp from 'react-countup';
 
-const About = () => {
+export function AboutSection() {
   const [index, setIndex] = useState(0);
   
   return (
@@ -237,6 +238,14 @@ et créativité.
         </motion.div>
       </div>
     </div>
+  );
+}
+
+const About = () => {
+  return (
+    <Layout>
+      <AboutSection />
+    </Layout>
   );
 };
 

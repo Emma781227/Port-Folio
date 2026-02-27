@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import Link from 'next/link';
 
 // data
 const workSlides = {
@@ -7,48 +6,48 @@ const workSlides = {
     {
       images: [
         {
-          title: 'Jeu de morpion ',
+          title: 'Jeu de morpion',
           path: '/morpion.png',
-          // live: 'https://3mpc-gab.com/'
+          live: 'https://jeu-morpion-demo.vercel.app/'
         },
         {
-          title: 'title',
+          title: 'Abidjan Bouge',
           path: '/AbidjanBouge.PNG',
-          // live: 'https://abidjanbouge.webtinix.com/'
+          live: 'https://abidjanbouge.webtinix.com/'
         },
         {
-          title: 'title',
+          title: 'ADDED',
           path: '/added.PNG',
-          // live: 'https://dded.fr/'
+          live: 'https://dded.fr/'
         },
         {
-          title: 'title',
+          title: 'Courtix',
           path: '/Courtix.PNG',
-          // live: 'https://jpricher.com/fr/'
+          live: 'https://jpricher.com/fr/'
         },
       ],
     },
     {
       images: [
         {
-          title: 'title',
+          title: 'Fakodrop',
           path: '/fackodrop.PNG',
-          // live: 'https://fakodrop.com/'
+          live: 'https://fakodrop.com/'
         },
         {
-          title: 'title',
+          title: 'IAFR',
           path: '/iafr.PNG',
-          // live: '/work'
+          live: 'https://iafr.fr/'
         },
         {
-          title: 'title',
+          title: 'Khazad',
           path: '/Khazad.PNG',
-          // live: 'https://www.khazad.fr/'
+          live: 'https://www.khazad.fr/'
         },
         {
-          title: 'title',
+          title: 'SP-NET',
           path: '/Spnet.PNG',
-          // live: 'https://sp-net.fr/'
+          live: 'https://sp-net.fr/'
         },
       ],
     },
@@ -64,10 +63,9 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
 
 import { BsArrowRight } from 'react-icons/bs';
+import Link from 'next/link';
 
 const WorkSlider = () => {
-  const slide = [];
-  const image = [];
   return <Swiper 
   spaceBetween={10}
   pagination={{
@@ -85,13 +83,19 @@ const WorkSlider = () => {
                       <Image src={image.path} width={500} height={300} alt={image.title} />
                       
                       <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
-                      <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300" >
-                        {/* <Link href={image.live} className="flex items-center gap-x-2 text-[13px] tracking-[0.2rem]"> */}
+                      {image.live ? (
+                        <a href={image.live} target="_blank" rel="noreferrer" className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300 flex items-center gap-x-2 text-[13px] tracking-[0.2rem]" >
                           <div className="delay-100">LIVE</div>
                           <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-1">PROJECT</div>
                           <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150"><BsArrowRight /></div>
-                        {/* </Link> */}
-                      </div>
+                        </a>
+                      ) : (
+                        <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300 flex items-center gap-x-2 text-[13px] tracking-[0.2rem]" >
+                          <div className="delay-100">LIVE</div>
+                          <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-1">PROJECT</div>
+                          <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150"><BsArrowRight /></div>
+                        </div>
+                      )}
                     </div>
               </div>
             })}

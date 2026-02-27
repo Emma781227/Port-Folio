@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@next/font": "^13.4.4",
     "@tsparticles/all": "^3.4.0",
     "@tsparticles/react": "^3.0.0",
@@ -20,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "react-tsparticles": "^2.9.3",
+    "scroller": "^0.0.3",
     "swiper": "^9.4.0",
     "tailwind-scrollbar": "^3.0.4",
     "tsparticles": "^2.9.3"

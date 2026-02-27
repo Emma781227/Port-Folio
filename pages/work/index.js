@@ -1,12 +1,12 @@
 import WorkSlider from '../../components/WorkSlider';
+import Layout from '../../components/Layout';
 // import Bulb from '../../components/Bulb';
 import Circles from '../../components/Circles';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
-
-const Work = () => {
+export function WorkSection() {
   return (
     <div className="h-full bg-primary/30 py-36">
       <Circles />
@@ -33,6 +33,14 @@ const Work = () => {
       </div>
       {/* <Bulb /> */}
     </div>
+  );
+}
+
+const Work = () => {
+  return (
+    <Layout>
+      <WorkSection />
+    </Layout>
   );
 };
 
